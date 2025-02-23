@@ -1,0 +1,27 @@
+name: FTP Deploy
+
+# main 브랜치에 push가 발생하면 자동으로 실행
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1단계: 저장소 체크아웃
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2단계: FTP를 통한 자동 배포 (SamKirkland의 FTP Deploy Action 사용)
+      - name: Deploy to InfinityFree FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-username: ${{ secrets.FTP_USERNAME }}
+          ftp-password: ${{ secrets.FTP_PASSWORD }}
+          # local-dir: 배포할 로컬 디렉터리 (예: 프로젝트 전체 또는 특정 폴더)
+          local-dir: ./  
+          # server-dir: 인피니티프리 서버에서 파일이 업로드될 경로 (대부분 htdocs)
+          server-dir: /htdocs/
