@@ -161,6 +161,8 @@ def internal_error(error):
     logging.error("내부 서버 에러: %s", error)
     return jsonify({"error": "내부 서버 에러 발생"}), 500
 
-# 6. Flask 애플리케이션 실행 (개발용)
+from waitress import serve
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # 개발 환경에서는 app.run()을 사용하지만, 프로덕션 테스트를 위해 Waitress를 사용합니다.
+    serve(app, host='0.0.0.0', port=8000)

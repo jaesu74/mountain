@@ -6,3 +6,7 @@
 2025-02-23 16:45:04,613 INFO:  * Restarting with stat
 2025-02-23 16:45:04,970 WARNING:  * Debugger is active!
 2025-02-23 16:45:04,976 INFO:  * Debugger PIN: 128-758-130
+2025-02-23 17:20:25,824 INFO: Serving on http://0.0.0.0:8000
+2025-02-23 17:20:46,735 INFO: Google Geocoding API 호출 성공: {'error_message': 'You must use an API key to authenticate each request to Google Maps Platform APIs. For additional information, please refer to http://g.co/dev/maps-no-account', 'results': [], 'status': 'REQUEST_DENIED'}
+2025-02-23 17:20:46,737 INFO: 산림청 API 호출 성공: {'is_mountain_area': True, 'region_name': '강원도 산림지역', 'boundary_coordinates': [{'lat': 37.567499999999995, 'lon': 126.979}, {'lat': 37.5685, 'lon': 126.979}, {'lat': 37.5685, 'lon': 126.97999999999999}, {'lat': 37.567499999999995, 'lon': 126.97999999999999}]}
+2025-02-23 17:20:46,737 INFO: 법원 등기소 API 호출 성공: {'owner': '홍길동', 'registration_number': '1234-5678-9012', 'management': None}
